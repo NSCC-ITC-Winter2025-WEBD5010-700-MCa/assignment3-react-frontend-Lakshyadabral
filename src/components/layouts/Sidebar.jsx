@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+ import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChartPie,
@@ -13,7 +13,7 @@ import {
 
 const SidebarItem = ({ href, label, isCollapsed, icon }) => {
   const location = useLocation();
-  const isActive = location.pathname === href;
+  const isActive = location.pathname.startsWith(href);
 
   return (
     <li className="group">
