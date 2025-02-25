@@ -11,7 +11,7 @@
     const deleteBookMutation = useMutation({
     mutationFn: async (bookId) => {
       
-      const response = await fetch(`http://localhost:3000/books/${bookId}`, {
+      const response = await fetch(`${import.meta.env.VITE_BOOKS_API_URL}/${bookId}`, {
         method: 'DELETE'
 
       })

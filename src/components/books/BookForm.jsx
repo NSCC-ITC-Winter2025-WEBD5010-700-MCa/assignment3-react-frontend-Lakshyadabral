@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form"
-
+import BooksTable from '../books/booksTable'
+import { useEffect } from "react"
 
  
  
@@ -7,13 +8,15 @@ import { useForm } from "react-hook-form"
         
         const {register , handleSubmit , formState: {errors} , setValue} = useForm()
 
+        useEffect( () => {
         if(initialData) {
-        setValue('title' , initialData.title)
-        setValue('author' , initialData.author)
-        setValue('published_year', initialData.published_year)
-        setValue('genre' , initialData.genre)
-        
-        }
+        console.log(`Use effect run${initialData}`);
+            setValue('title' , initialData.title)
+            setValue('author' , initialData.author)
+            setValue('published_year', initialData.published_year)
+            setValue('genre' , initialData.genre)
+            }
+    }, [initialData])
 
         return (
             <form onSubmit={handleSubmit(onDataCollected)} className="space-y-4">

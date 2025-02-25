@@ -14,18 +14,14 @@ function BookEdit () {
     const { data } = useQuery({
         queryKey: ['books' , id],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:3000/books/${id}`)
+            const response = await fetch(`${import.meta.env.VITE_BOOKS_API_URL}/${bookId}`)
             return response.json()
         },
-        onSuccess: (bookData) => {
-            console.log(bookData);
-            
-        }
     })
 
     const editBookMutation = useMutation({
       mutationFn: async (data) => {
-        const response = await fetch(`http://localhost:3000/books/${id}`, {
+        const response = await fetch(`${import.meta.env.VITE_BOOKS_API_URL}/${bookId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json'

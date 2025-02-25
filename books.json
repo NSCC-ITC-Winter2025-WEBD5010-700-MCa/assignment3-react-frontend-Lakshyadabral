@@ -1,13 +1,6 @@
 {
   "books": [
     {
-      "title": "Bleh",
-      "author": "Me",
-      "published_year": "2024",
-      "genre": "New",
-      "id": "1"
-    },
-    {
       "id": "2",
       "title": "Glimmer of Light (edit)",
       "author": "Lisa Clark",
