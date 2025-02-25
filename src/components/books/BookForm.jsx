@@ -10,13 +10,12 @@ import { useEffect } from "react"
 
         useEffect( () => {
         if(initialData) {
-        console.log(`Use effect run${initialData}`);
             setValue('title' , initialData.title)
             setValue('author' , initialData.author)
             setValue('published_year', initialData.published_year)
             setValue('genre' , initialData.genre)
             }
-    }, [initialData])
+    }, [initialData , setValue])
 
         return (
             <form onSubmit={handleSubmit(onDataCollected)} className="space-y-4">
